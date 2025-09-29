@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Product - Test Page</title>
+    <title>Thermodul - The Future of Water Heating</title>
     <style>
         * {
             margin: 0;
@@ -12,88 +12,415 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
+            color: #2c3e50;
+            background: #ffffff;
         }
         
-        header {
-            background: #2c3e50;
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), 
+                        url('data:image/svg+xml,%3Csvg width="200" height="200" xmlns="http://www.w3.org/2000/svg"%3E%3Cdefs%3E%3Cpattern id="wood" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse"%3E%3Crect fill="%238B4513" width="200" height="200"/%3E%3Cpath d="M0 10 Q50 5 100 10 T200 10" stroke="%23654321" stroke-width="2" fill="none" opacity="0.3"/%3E%3Cpath d="M0 30 Q50 35 100 30 T200 30" stroke="%23654321" stroke-width="1.5" fill="none" opacity="0.2"/%3E%3Cpath d="M0 60 Q50 55 100 60 T200 60" stroke="%23654321" stroke-width="2" fill="none" opacity="0.3"/%3E%3Cpath d="M0 90 Q50 95 100 90 T200 90" stroke="%23654321" stroke-width="1" fill="none" opacity="0.2"/%3E%3Cpath d="M0 120 Q50 115 100 120 T200 120" stroke="%23654321" stroke-width="2" fill="none" opacity="0.3"/%3E%3Cpath d="M0 150 Q50 155 100 150 T200 150" stroke="%23654321" stroke-width="1.5" fill="none" opacity="0.2"/%3E%3Cpath d="M0 180 Q50 175 100 180 T200 180" stroke="%23654321" stroke-width="2" fill="none" opacity="0.3"/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill="url(%23wood)" width="200" height="200"/%3E%3C/svg%3E');
             color: white;
-            padding: 2rem 1rem;
+            padding: 4rem 2rem;
             text-align: center;
         }
         
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
         }
         
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        
-        main {
-            max-width: 800px;
-            margin: 3rem auto;
-            padding: 0 1rem;
-        }
-        
-        .card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        .hero .tagline {
+            font-size: 1.5rem;
+            opacity: 0.95;
+            font-weight: 300;
             margin-bottom: 2rem;
         }
         
+        .hero .subtitle {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        /* Product Image Section */
+        .product-showcase {
+            background: #f8f9fa;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .product-image {
+            max-width: 500px;
+            margin: 0 auto;
+            background: #e9ecef;
+            border-radius: 12px;
+            padding: 3rem;
+            color: #6c757d;
+            font-size: 1.2rem;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #dee2e6;
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        section {
+            padding: 4rem 0;
+        }
+        
         h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: 300;
             color: #2c3e50;
+        }
+        
+        /* Benefits Grid */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .benefit-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.12);
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
             margin-bottom: 1rem;
         }
         
-        .status {
-            background: #27ae60;
-            color: white;
-            padding: 1rem;
-            border-radius: 4px;
-            text-align: center;
-            font-weight: bold;
+        .benefit-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: #8B4513;
+            font-weight: 500;
         }
         
+        .benefit-card p {
+            color: #5a6c7d;
+            line-height: 1.7;
+        }
+        
+        /* Features Section */
+        .features {
+            background: #f8f9fa;
+        }
+        
+        .feature-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .feature-item {
+            background: white;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #8B4513;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .feature-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+        
+        .feature-item p {
+            color: #5a6c7d;
+        }
+        
+        /* Use Cases */
+        .use-cases {
+            background: white;
+        }
+        
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .use-case {
+            background: linear-gradient(rgba(44, 62, 80, 0.95), rgba(44, 62, 80, 0.95)), 
+                        url('data:image/svg+xml,%3Csvg width="200" height="200" xmlns="http://www.w3.org/2000/svg"%3E%3Cdefs%3E%3Cpattern id="wood2" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse"%3E%3Crect fill="%238B4513" width="200" height="200"/%3E%3Cpath d="M0 10 Q50 5 100 10 T200 10" stroke="%23654321" stroke-width="2" fill="none" opacity="0.3"/%3E%3Cpath d="M0 30 Q50 35 100 30 T200 30" stroke="%23654321" stroke-width="1.5" fill="none" opacity="0.2"/%3E%3Cpath d="M0 60 Q50 55 100 60 T200 60" stroke="%23654321" stroke-width="2" fill="none" opacity="0.3"/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill="url(%23wood2)" width="200" height="200"/%3E%3C/svg%3E');
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .use-case h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .use-case p {
+            font-size: 0.95rem;
+            opacity: 0.95;
+        }
+        
+        /* Guarantee Section */
+        .guarantee {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        
+        .guarantee h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .guarantee-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.1);
+            padding: 2rem 3rem;
+            border-radius: 12px;
+            border: 2px solid rgba(255,255,255,0.3);
+            margin: 1rem 0;
+        }
+        
+        .guarantee-years {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .guarantee-text {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: #f8f9fa;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        
+        .cta h2 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            color: #5a6c7d;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(rgba(139, 69, 19, 0.9), rgba(139, 69, 19, 0.9)), 
+                        url('data:image/svg+xml,%3Csvg width="200" height="200" xmlns="http://www.w3.org/2000/svg"%3E%3Cdefs%3E%3Cpattern id="wood3" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse"%3E%3Crect fill="%238B4513" width="200" height="200"/%3E%3Cpath d="M0 10 Q50 5 100 10 T200 10" stroke="%23654321" stroke-width="2" fill="none" opacity="0.3"/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill="url(%23wood3)" width="200" height="200"/%3E%3C/svg%3E');
+            color: white;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.6);
+        }
+        
+        /* Footer */
         footer {
+            background: #2c3e50;
+            color: white;
             text-align: center;
             padding: 2rem;
-            color: #666;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>My Product</h1>
-        <p>Test deployment successful!</p>
-    </header>
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Thermodul</h1>
+        <div class="tagline">Instant Water Heating, Reimagined</div>
+        <div class="subtitle">State-of-the-art technology in a compact cube. Heat water in seconds with minimal space and maximum efficiency.</div>
+    </div>
     
-    <main>
-        <div class="card">
-            <div class="status">✓ GitHub Pages is working!</div>
+    <!-- Product Image Section -->
+    <div class="product-showcase">
+        <div class="product-image">
+            [Product Image Placeholder - Replace with actual Thermodul device photo]
         </div>
-        
-        <div class="card">
-            <h2>About</h2>
-            <p>This is a test page to verify that GitHub Pages deployment is working correctly. Once confirmed, we can build out the full homepage.</p>
-        </div>
-        
-        <div class="card">
-            <h2>Next Steps</h2>
-            <p>If you can see this page at your GitHub Pages URL, the deployment is successful and we can proceed with creating your actual product homepage.</p>
-        </div>
-    </main>
+    </div>
     
+    <!-- Benefits Section -->
+    <section class="container">
+        <h2>Why Choose Thermodul?</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">⚡</div>
+                <h3>Instant Heating</h3>
+                <p>Heat water in seconds with cutting-edge electric heating technology. No waiting, no waste.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">📐</div>
+                <h3>Compact Design</h3>
+                <p>Small cube-like device that fits anywhere. Perfect for spaces where traditional systems won't work.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">🔧</div>
+                <h3>Easy Installation</h3>
+                <p>Simple setup with no complex plumbing. Get your system running in hours, not days.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">💰</div>
+                <h3>Cost-Effective</h3>
+                <p>Cheaper than any other heating solution on the market. Save on installation and maintenance costs.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">🛠️</div>
+                <h3>Zero Maintenance</h3>
+                <p>No moving parts means nothing to maintain, repair, or replace. Set it and forget it.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">🛡️</div>
+                <h3>Built to Last</h3>
+                <p>Solid-state construction with no assembly or disassembly needed. Reliable for decades.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Technical Excellence</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <h3>State-of-the-Art Technology</h3>
+                    <p>Advanced electric heating elements provide instant, precise temperature control with maximum energy efficiency.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h3>Minimal Space Required</h3>
+                    <p>Compact cube design fits in tight spaces where traditional water heaters and boilers simply can't go.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h3>Simple Integration</h3>
+                    <p>Connects directly to your water line and electrical supply. No complex heating systems or extensive renovations needed.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h3>Safe & Reliable</h3>
+                    <p>Built-in safety features and solid construction ensure worry-free operation year after year.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Use Cases Section -->
+    <section class="use-cases">
+        <div class="container">
+            <h2>Perfect For Every Application</h2>
+            <div class="use-cases-grid">
+                <div class="use-case">
+                    <h3>🏛️ Historic Buildings</h3>
+                    <p>Ideal solution for old buildings where modernizing the heating system would be costly and complicated.</p>
+                </div>
+                
+                <div class="use-case">
+                    <h3>🏠 New Homes</h3>
+                    <p>Modern, efficient heating for contemporary construction without bulky traditional systems.</p>
+                </div>
+                
+                <div class="use-case">
+                    <h3>🏢 Multi-Floor Industrial</h3>
+                    <p>Perfect for industrial areas requiring separate heating regulation for different floors and zones.</p>
+                </div>
+                
+                <div class="use-case">
+                    <h3>🐄 Agricultural Facilities</h3>
+                    <p>Excellent for animal farming and facilities where hot water and sterility are essential.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Guarantee Section -->
+    <section class="guarantee">
+        <h2>Our Promise to You</h2>
+        <div class="guarantee-badge">
+            <div class="guarantee-years">25 YEARS</div>
+            <div class="guarantee-text">Warranty Included</div>
+        </div>
+        <p style="margin-top: 2rem; font-size: 1.1rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+            We stand behind our product with a comprehensive 25-year warranty. With no moving parts and no maintenance required, Thermodul is built to provide decades of reliable service.
+        </p>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Upgrade Your Heating?</h2>
+            <p>Join thousands of satisfied customers who've made the switch to Thermodul. Experience the future of water heating today.</p>
+            <a href="#contact" class="cta-button">Get in Touch</a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
     <footer>
-        <p>Deployed via GitHub Pages</p>
+        <p>&copy; 2025 Thermodul. All rights reserved.</p>
     </footer>
 </body>
 </html>
