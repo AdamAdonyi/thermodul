@@ -15,11 +15,11 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: #2c3e50;
-            background: transparent; /* Let canvas show through */
+            background: transparent;
             overflow-x: hidden;
         }
 
-        /* === CANVAS BACKGROUND STYLES === */
+        /* === CANVAS BACKGROUND === */
         #canvas-container {
             position: fixed;
             top: 0;
@@ -36,9 +36,12 @@
             height: 100%;
         }
 
-        /* === ORIGINAL THERMODUL STYLES === */
+        /* === HERO: Now transparent over animated background === */
         .hero {
-            background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.85));
+            background: linear-gradient(
+                rgba(0, 0, 0, 0.55),
+                rgba(0, 0, 0, 0.75)
+            );
             color: white;
             padding: 4rem 2rem;
             text-align: center;
@@ -67,8 +70,9 @@
             opacity: 0.9;
         }
         
+        /* === Product section: light transparent background === */
         .product-showcase {
-            background: rgba(248, 249, 250, 0.92);
+            background: rgba(255, 255, 255, 0.85);
             padding: 4rem 2rem;
             text-align: center;
             position: relative;
@@ -149,8 +153,9 @@
             line-height: 1.7;
         }
         
+        /* === Features: transparent background, white cards === */
         .features {
-            background: rgba(248, 249, 250, 0.92);
+            background: transparent;
         }
         
         .feature-list {
@@ -178,8 +183,9 @@
             color: #5a6c7d;
         }
         
+        /* === Use Cases: transparent background === */
         .use-cases {
-            background: white;
+            background: transparent;
         }
         
         .use-cases-grid {
@@ -189,7 +195,10 @@
         }
         
         .use-case {
-            background: linear-gradient(rgba(44, 62, 80, 0.95), rgba(44, 62, 80, 0.95));
+            background: linear-gradient(
+                rgba(0, 0, 0, 0.7),
+                rgba(0, 0, 0, 0.85)
+            );
             color: white;
             padding: 2rem;
             border-radius: 12px;
@@ -208,7 +217,7 @@
         }
         
         .guarantee {
-            background: #2c3e50;
+            background: rgba(44, 62, 80, 0.92);
             color: white;
             text-align: center;
             padding: 4rem 2rem;
@@ -239,8 +248,9 @@
             opacity: 0.95;
         }
         
+        /* === CTA: light transparent === */
         .cta {
-            background: rgba(248, 249, 250, 0.92);
+            background: rgba(255, 255, 255, 0.85);
             text-align: center;
             padding: 4rem 2rem;
         }
@@ -258,7 +268,7 @@
         
         .cta-button {
             display: inline-block;
-            background: linear-gradient(rgba(139, 69, 19, 0.9), rgba(139, 69, 19, 0.9));
+            background: linear-gradient(rgba(139, 69, 19, 0.95), rgba(139, 69, 19, 0.95));
             color: white;
             padding: 1rem 3rem;
             border-radius: 50px;
@@ -275,23 +285,21 @@
         }
         
         footer {
-            background: #2c3e50;
+            background: rgba(44, 62, 80, 0.95);
             color: white;
             text-align: center;
             padding: 2rem;
             font-size: 0.9rem;
-            opacity: 0.8;
+            opacity: 0.9;
         }
         
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
             }
-            
             .hero .tagline {
                 font-size: 1.2rem;
             }
-            
             h2 {
                 font-size: 2rem;
             }
@@ -304,7 +312,7 @@
         <canvas id="darkveil-canvas"></canvas>
     </div>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (now transparent) -->
     <div class="hero">
         <h1>Thermodul</h1>
         <div class="tagline">Instant Water Heating, Reimagined</div>
@@ -327,31 +335,26 @@
                 <h3>Instant Heating</h3>
                 <p>Heat water in seconds with cutting-edge electric heating technology. No waiting, no waste.</p>
             </div>
-            
             <div class="benefit-card">
                 <div class="benefit-icon">📐</div>
                 <h3>Compact Design</h3>
                 <p>Small cube-like device that fits anywhere. Perfect for spaces where traditional systems won't work.</p>
             </div>
-            
             <div class="benefit-card">
                 <div class="benefit-icon">🔧</div>
                 <h3>Easy Installation</h3>
                 <p>Simple setup with no complex plumbing. Get your system running in hours, not days.</p>
             </div>
-            
             <div class="benefit-card">
                 <div class="benefit-icon">💰</div>
                 <h3>Cost-Effective</h3>
                 <p>Cheaper than any other heating solution on the market. Save on installation and maintenance costs.</p>
             </div>
-            
             <div class="benefit-card">
                 <div class="benefit-icon">🛠️</div>
                 <h3>Zero Maintenance</h3>
                 <p>No moving parts means nothing to maintain, repair, or replace. Set it and forget it.</p>
             </div>
-            
             <div class="benefit-card">
                 <div class="benefit-icon">🛡️</div>
                 <h3>Built to Last</h3>
@@ -369,17 +372,14 @@
                     <h3>State-of-the-Art Technology</h3>
                     <p>Advanced electric heating elements provide instant, precise temperature control with maximum energy efficiency.</p>
                 </div>
-                
                 <div class="feature-item">
                     <h3>Minimal Space Required</h3>
                     <p>Compact cube design fits in tight spaces where traditional water heaters and boilers simply can't go.</p>
                 </div>
-                
                 <div class="feature-item">
                     <h3>Simple Integration</h3>
                     <p>Connects directly to your water line and electrical supply. No complex heating systems or extensive renovations needed.</p>
                 </div>
-                
                 <div class="feature-item">
                     <h3>Safe & Reliable</h3>
                     <p>Built-in safety features and solid construction ensure worry-free operation year after year.</p>
@@ -397,17 +397,14 @@
                     <h3>🏛️ Historic Buildings</h3>
                     <p>Ideal solution for old buildings where modernizing the heating system would be costly and complicated.</p>
                 </div>
-                
                 <div class="use-case">
                     <h3>🏠 New Homes</h3>
                     <p>Modern, efficient heating for contemporary construction without bulky traditional systems.</p>
                 </div>
-                
                 <div class="use-case">
                     <h3>🏢 Multi-Floor Industrial</h3>
                     <p>Perfect for industrial areas requiring separate heating regulation for different floors and zones.</p>
                 </div>
-                
                 <div class="use-case">
                     <h3>🐄 Agricultural Facilities</h3>
                     <p>Excellent for animal farming and facilities where hot water and sterility are essential.</p>
@@ -442,14 +439,13 @@
         <p>&copy; 2025 Thermodul. All rights reserved.</p>
     </footer>
 
-    <!-- WebGL Animated Background Script -->
+    <!-- WebGL Animated Background Script (with warm amber tint) -->
     <script type="module">
         const canvas = document.getElementById('darkveil-canvas');
         const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
 
         if (!gl) {
-            // Fallback: set a static dark background if WebGL fails
-            document.body.style.background = '#0a0a14';
+            document.body.style.background = '#0f0a05';
             return;
         }
 
@@ -511,14 +507,14 @@
             void mainImage(out vec4 fragColor,in vec2 fragCoord){
                 vec2 uv=fragCoord/uResolution.xy*2.-1.;
                 uv.y*=-1.;
-                uv+=uWarp*vec2(sin(uv.y*6.283+uTime*0.5),cos(uv.x*6.283+uTime*0.5))*0.05;
+                uv+=0.8*vec2(sin(uv.y*6.283+uTime*0.5),cos(uv.x*6.283+uTime*0.5))*0.05;
                 fragColor=cppn_fn(uv,0.1*sin(0.3*uTime),0.1*sin(0.69*uTime),0.1*sin(0.44*uTime));
             }
 
             void main(){
                 vec4 col;mainImage(col,gl_FragCoord.xy);
-                col.rgb=hueShiftRGB(col.rgb,200.0); // Slight blue-purple tint for professionalism
-                col.rgb+=(rand(gl_FragCoord.xy+uTime)-0.5)*0.02; // Very subtle noise
+                col.rgb=hueShiftRGB(col.rgb,40.0); // 🌟 Warm amber tone (matches wood/brown theme)
+                col.rgb+=(rand(gl_FragCoord.xy+uTime)-0.5)*0.015; // subtle noise
                 gl_FragColor=vec4(clamp(col.rgb,0.0,1.0),1.0);
             }
         `;
@@ -542,10 +538,6 @@
         gl.attachShader(program, vertexShader);
         gl.attachShader(program, fragmentShader);
         gl.linkProgram(program);
-
-        if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
-            console.warn('Program link error:', gl.getProgramInfoLog(program));
-        }
 
         const positionLocation = gl.getAttribLocation(program, 'position');
         const uTimeLocation = gl.getUniformLocation(program, 'uTime');
