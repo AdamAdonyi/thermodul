@@ -277,13 +277,94 @@
             font-weight: 500;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
+            cursor: pointer;
         }
         
         .cta-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(139, 69, 19, 0.6);
         }
-        
+
+        /* === MODAL STYLES === */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            max-width: 600px;
+            margin: 2rem auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .modal h2 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #2c3e50;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .checkbox-item input {
+            width: auto;
+            margin: 0;
+        }
+
+        .close-modal {
+            float: right;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #aaa;
+            cursor: pointer;
+        }
+
+        .close-modal:hover {
+            color: #333;
+        }
+
         footer {
             background: rgba(44, 62, 80, 0.95);
             color: white;
@@ -292,7 +373,7 @@
             font-size: 0.9rem;
             opacity: 0.9;
         }
-        
+
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
@@ -302,6 +383,9 @@
             }
             h2 {
                 font-size: 2rem;
+            }
+            .modal-content {
+                padding: 1.5rem;
             }
         }
     </style>
@@ -431,13 +515,78 @@
             <h2>Ready to Upgrade Your Heating?</h2>
             <p>Join thousands of satisfied customers who've made the switch to Thermodul. Experience the future of water heating today.</p>
             <a href="#contact" class="cta-button">Get in Touch</a>
+            <!-- NEW BUTTON -->
+            <div style="margin-top: 1.5rem;">
+                <a id="openPartnerForm" class="cta-button" style="background: linear-gradient(rgba(44,62,80,0.95), rgba(44,62,80,0.95));">Become a Certified Installer</a>
+            </div>
         </div>
     </section>
     
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 Thermodul. All rights reserved.</p>
+        <!-- Optional: duplicate button in footer -->
+        <div style="margin-top: 1rem;">
+            <a id="openPartnerFormFooter" class="cta-button" style="background: linear-gradient(rgba(44,62,80,0.95), rgba(44,62,80,0.95)); padding: 0.6rem 1.5rem; font-size: 1rem;">Become a Partner</a>
+        </div>
     </footer>
+
+    <!-- Partner Application Form Modal -->
+    <div id="partnerModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <h2>Join Our Installer Network</h2>
+            <form id="partnerForm">
+                <div class="form-group">
+                    <label>Full name:</label>
+                    <input type="text" name="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label>Age:</label>
+                    <input type="number" name="age" min="18" max="100" required>
+                </div>
+                <div class="form-group">
+                    <label>Home city:</label>
+                    <input type="text" name="homeCity" required>
+                </div>
+                <div class="form-group">
+                    <label>Street:</label>
+                    <input type="text" name="street" required>
+                </div>
+                <div class="form-group">
+                    <label>Radius willing to travel (km):</label>
+                    <input type="number" name="radius" min="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Professional experience:</label>
+                    <p style="margin: 0.5rem 0; color: #5a6c7d;">How many years of experience do you have in water and gas installation?</p>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item"><input type="radio" name="waterGasExp" value="2" required> 2</label>
+                        <label class="checkbox-item"><input type="radio" name="waterGasExp" value="3"> 3</label>
+                        <label class="checkbox-item"><input type="radio" name="waterGasExp" value="4"> 4</label>
+                        <label class="checkbox-item"><input type="radio" name="waterGasExp" value="5"> 5</label>
+                        <label class="checkbox-item"><input type="radio" name="waterGasExp" value="5+"> more than 5</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <p style="margin: 0.5rem 0; color: #5a6c7d;">How many years of experience do you have in electric device installation?</p>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item"><input type="radio" name="electricExp" value="2" required> 2</label>
+                        <label class="checkbox-item"><input type="radio" name="electricExp" value="3"> 3</label>
+                        <label class="checkbox-item"><input type="radio" name="electricExp" value="4"> 4</label>
+                        <label class="checkbox-item"><input type="radio" name="electricExp" value="5"> 5</label>
+                        <label class="checkbox-item"><input type="radio" name="electricExp" value="5+"> more than 5</label>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 1.5rem;">
+                    <button type="submit" class="cta-button" style="padding: 0.8rem 2rem;">Submit Application</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <!-- WebGL Animated Background Script (with warm amber tint) -->
     <script type="module">
@@ -583,6 +732,40 @@
         }
 
         render();
+    </script>
+
+    <!-- Form Modal JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById('partnerModal');
+            const openButtons = document.querySelectorAll('#openPartnerForm, #openPartnerFormFooter');
+            const closeModal = document.getElementById('closeModal');
+            const form = document.getElementById('partnerForm');
+
+            openButtons.forEach(button => {
+                button.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    modal.style.display = 'block';
+                });
+            });
+
+            closeModal.addEventListener('click', function () {
+                modal.style.display = 'none';
+            });
+
+            window.addEventListener('click', function (e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                alert('Thank you! Your application has been submitted.');
+                modal.style.display = 'none';
+                form.reset();
+            });
+        });
     </script>
 </body>
 </html>
