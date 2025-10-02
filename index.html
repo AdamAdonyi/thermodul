@@ -387,6 +387,10 @@
             .modal-content {
                 padding: 1.5rem;
             }
+            .checkbox-group {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
         }
     </style>
 </head>
@@ -396,7 +400,7 @@
         <canvas id="darkveil-canvas"></canvas>
     </div>
 
-    <!-- Hero Section (now transparent) -->
+    <!-- Hero Section -->
     <div class="hero">
         <h1>Thermodul</h1>
         <div class="tagline">Instant Water Heating, Reimagined</div>
@@ -406,7 +410,7 @@
     <!-- Product Image Section -->
     <div class="product-showcase">
         <div class="product-image">
-            [Product Image Placeholder - Replace with actual Thermodul device photo]
+            [Product Image Placeholder]
         </div>
     </div>
     
@@ -417,32 +421,32 @@
             <div class="benefit-card">
                 <div class="benefit-icon">⚡</div>
                 <h3>Instant Heating</h3>
-                <p>Heat water in seconds with cutting-edge electric heating technology. No waiting, no waste.</p>
+                <p>Heat water in seconds with cutting-edge electric heating technology.</p>
             </div>
             <div class="benefit-card">
                 <div class="benefit-icon">📐</div>
                 <h3>Compact Design</h3>
-                <p>Small cube-like device that fits anywhere. Perfect for spaces where traditional systems won't work.</p>
+                <p>Small cube-like device that fits anywhere.</p>
             </div>
             <div class="benefit-card">
                 <div class="benefit-icon">🔧</div>
                 <h3>Easy Installation</h3>
-                <p>Simple setup with no complex plumbing. Get your system running in hours, not days.</p>
+                <p>Simple setup with no complex plumbing.</p>
             </div>
             <div class="benefit-card">
                 <div class="benefit-icon">💰</div>
                 <h3>Cost-Effective</h3>
-                <p>Cheaper than any other heating solution on the market. Save on installation and maintenance costs.</p>
+                <p>Cheaper than any other heating solution on the market.</p>
             </div>
             <div class="benefit-card">
                 <div class="benefit-icon">🛠️</div>
                 <h3>Zero Maintenance</h3>
-                <p>No moving parts means nothing to maintain, repair, or replace. Set it and forget it.</p>
+                <p>No moving parts means nothing to maintain.</p>
             </div>
             <div class="benefit-card">
                 <div class="benefit-icon">🛡️</div>
                 <h3>Built to Last</h3>
-                <p>Solid-state construction with no assembly or disassembly needed. Reliable for decades.</p>
+                <p>Solid-state construction with no assembly or disassembly needed.</p>
             </div>
         </div>
     </section>
@@ -454,19 +458,19 @@
             <div class="feature-list">
                 <div class="feature-item">
                     <h3>State-of-the-Art Technology</h3>
-                    <p>Advanced electric heating elements provide instant, precise temperature control with maximum energy efficiency.</p>
+                    <p>Advanced electric heating elements provide instant, precise temperature control.</p>
                 </div>
                 <div class="feature-item">
                     <h3>Minimal Space Required</h3>
-                    <p>Compact cube design fits in tight spaces where traditional water heaters and boilers simply can't go.</p>
+                    <p>Compact cube design fits in tight spaces.</p>
                 </div>
                 <div class="feature-item">
                     <h3>Simple Integration</h3>
-                    <p>Connects directly to your water line and electrical supply. No complex heating systems or extensive renovations needed.</p>
+                    <p>Connects directly to your water line and electrical supply.</p>
                 </div>
                 <div class="feature-item">
                     <h3>Safe & Reliable</h3>
-                    <p>Built-in safety features and solid construction ensure worry-free operation year after year.</p>
+                    <p>Built-in safety features ensure worry-free operation.</p>
                 </div>
             </div>
         </div>
@@ -479,19 +483,19 @@
             <div class="use-cases-grid">
                 <div class="use-case">
                     <h3>🏛️ Historic Buildings</h3>
-                    <p>Ideal solution for old buildings where modernizing the heating system would be costly and complicated.</p>
+                    <p>Ideal for old buildings where modernizing is costly.</p>
                 </div>
                 <div class="use-case">
                     <h3>🏠 New Homes</h3>
-                    <p>Modern, efficient heating for contemporary construction without bulky traditional systems.</p>
+                    <p>Modern, efficient heating for contemporary construction.</p>
                 </div>
                 <div class="use-case">
                     <h3>🏢 Multi-Floor Industrial</h3>
-                    <p>Perfect for industrial areas requiring separate heating regulation for different floors and zones.</p>
+                    <p>Perfect for industrial areas with zone regulation.</p>
                 </div>
                 <div class="use-case">
                     <h3>🐄 Agricultural Facilities</h3>
-                    <p>Excellent for animal farming and facilities where hot water and sterility are essential.</p>
+                    <p>Excellent for animal farming and sterility needs.</p>
                 </div>
             </div>
         </div>
@@ -505,7 +509,7 @@
             <div class="guarantee-text">Warranty Included</div>
         </div>
         <p style="margin-top: 2rem; font-size: 1.1rem; max-width: 700px; margin-left: auto; margin-right: auto;">
-            We stand behind our product with a comprehensive 25-year warranty. With no moving parts and no maintenance required, Thermodul is built to provide decades of reliable service.
+            We stand behind our product with a comprehensive 25-year warranty.
         </p>
     </section>
     
@@ -513,11 +517,11 @@
     <section class="cta">
         <div class="container">
             <h2>Ready to Upgrade Your Heating?</h2>
-            <p>Join thousands of satisfied customers who've made the switch to Thermodul. Experience the future of water heating today.</p>
+            <p>Join thousands of satisfied customers who've made the switch to Thermodul.</p>
             <a href="#contact" class="cta-button">Get in Touch</a>
             <!-- NEW BUTTON -->
             <div style="margin-top: 1.5rem;">
-                <a id="openPartnerForm" class="cta-button" style="background: linear-gradient(rgba(44,62,80,0.95), rgba(44,62,80,0.95));">Become a Certified Installer</a>
+                <a id="openPartnerForm" class="cta-button" style="background: linear-gradient(rgba(44,62,80,0.95), rgba(44,62,80,0.95));">Become a Partner</a>
             </div>
         </div>
     </section>
@@ -525,7 +529,6 @@
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 Thermodul. All rights reserved.</p>
-        <!-- Optional: duplicate button in footer -->
         <div style="margin-top: 1rem;">
             <a id="openPartnerFormFooter" class="cta-button" style="background: linear-gradient(rgba(44,62,80,0.95), rgba(44,62,80,0.95)); padding: 0.6rem 1.5rem; font-size: 1rem;">Become a Partner</a>
         </div>
@@ -535,60 +538,42 @@
     <div id="partnerModal" class="modal">
         <div class="modal-content">
             <span class="close-modal" id="closeModal">&times;</span>
-            <h2>Join Our Installer Network</h2>
+            <h2>Become a Thermodul Partner</h2>
             <form id="partnerForm">
                 <div class="form-group">
-                    <label>Full name:</label>
-                    <input type="text" name="fullName" required>
+                    <label>Company name:</label>
+                    <input type="text" name="companyName" required>
                 </div>
                 <div class="form-group">
-                    <label>Age:</label>
-                    <input type="number" name="age" min="18" max="100" required>
-                </div>
-                <div class="form-group">
-                    <label>Home city:</label>
-                    <input type="text" name="homeCity" required>
+                    <label>Main office city:</label>
+                    <input type="text" name="city" required>
                 </div>
                 <div class="form-group">
                     <label>Street:</label>
                     <input type="text" name="street" required>
                 </div>
                 <div class="form-group">
-                    <label>Radius willing to travel (km):</label>
-                    <input type="number" name="radius" min="1" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Professional experience:</label>
-                    <p style="margin: 0.5rem 0; color: #5a6c7d;">How many years of experience do you have in water and gas installation?</p>
+                    <label>Number of employees:</label>
                     <div class="checkbox-group">
-                        <label class="checkbox-item"><input type="radio" name="waterGasExp" value="2" required> 2</label>
-                        <label class="checkbox-item"><input type="radio" name="waterGasExp" value="3"> 3</label>
-                        <label class="checkbox-item"><input type="radio" name="waterGasExp" value="4"> 4</label>
-                        <label class="checkbox-item"><input type="radio" name="waterGasExp" value="5"> 5</label>
-                        <label class="checkbox-item"><input type="radio" name="waterGasExp" value="5+"> more than 5</label>
+                        <label class="checkbox-item"><input type="radio" name="employees" value="0-5" required> 0–5</label>
+                        <label class="checkbox-item"><input type="radio" name="employees" value="5-50"> 5–50</label>
+                        <label class="checkbox-item"><input type="radio" name="employees" value="50-100"> 50–100</label>
+                        <label class="checkbox-item"><input type="radio" name="employees" value="100+"> +100</label>
                     </div>
                 </div>
-
                 <div class="form-group">
-                    <p style="margin: 0.5rem 0; color: #5a6c7d;">How many years of experience do you have in electric device installation?</p>
-                    <div class="checkbox-group">
-                        <label class="checkbox-item"><input type="radio" name="electricExp" value="2" required> 2</label>
-                        <label class="checkbox-item"><input type="radio" name="electricExp" value="3"> 3</label>
-                        <label class="checkbox-item"><input type="radio" name="electricExp" value="4"> 4</label>
-                        <label class="checkbox-item"><input type="radio" name="electricExp" value="5"> 5</label>
-                        <label class="checkbox-item"><input type="radio" name="electricExp" value="5+"> more than 5</label>
-                    </div>
+                    <label>Contact email:</label>
+                    <input type="email" name="contactEmail" required>
                 </div>
 
                 <div style="text-align: center; margin-top: 1.5rem;">
-                    <button type="submit" class="cta-button" style="padding: 0.8rem 2rem;">Submit Application</button>
+                    <button type="submit" class="cta-button" style="padding: 0.8rem 2rem;">Submit Partnership Request</button>
                 </div>
             </form>
         </div>
     </div>
 
-    <!-- WebGL Animated Background Script (with warm amber tint) -->
+    <!-- WebGL Animated Background Script -->
     <script type="module">
         const canvas = document.getElementById('darkveil-canvas');
         const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
@@ -662,8 +647,8 @@
 
             void main(){
                 vec4 col;mainImage(col,gl_FragCoord.xy);
-                col.rgb=hueShiftRGB(col.rgb,40.0); // 🌟 Warm amber tone (matches wood/brown theme)
-                col.rgb+=(rand(gl_FragCoord.xy+uTime)-0.5)*0.015; // subtle noise
+                col.rgb=hueShiftRGB(col.rgb,40.0);
+                col.rgb+=(rand(gl_FragCoord.xy+uTime)-0.5)*0.015;
                 gl_FragColor=vec4(clamp(col.rgb,0.0,1.0),1.0);
             }
         `;
@@ -761,7 +746,7 @@
 
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
-                alert('Thank you! Your application has been submitted.');
+                alert('Thank you! Your partnership request has been submitted.');
                 modal.style.display = 'none';
                 form.reset();
             });
