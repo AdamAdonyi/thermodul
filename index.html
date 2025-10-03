@@ -374,6 +374,44 @@
             opacity: 0.9;
         }
 
+        /* === APPLY FORM STYLES === */
+        .apply-form .form-section {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .apply-form .form-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .apply-form .form-section h3 {
+            margin-bottom: 1rem;
+            color: #8B4513;
+            font-size: 1.3rem;
+        }
+
+        .apply-form .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .apply-form .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            min-width: 80px;
+        }
+
+        .apply-form .radio-item input {
+            width: auto;
+            margin: 0;
+        }
+
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
@@ -388,6 +426,10 @@
                 padding: 1.5rem;
             }
             .checkbox-group {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .apply-form .radio-group {
                 flex-direction: column;
                 gap: 0.5rem;
             }
@@ -518,7 +560,8 @@
         <div class="container">
             <h2>Ready to Upgrade Your Heating?</h2>
             <p>Join thousands of satisfied customers who've made the switch to Thermodul.</p>
-            <a href="#contact" class="cta-button">Get in Touch</a>
+            <!-- RENAMED BUTTON -->
+            <a id="openApplyForm" class="cta-button">APPLY</a>
             <!-- NEW BUTTON -->
             <div style="margin-top: 1.5rem;">
                 <a id="openPartnerForm" class="cta-button" style="background: linear-gradient(rgba(44,62,80,0.95), rgba(44,62,80,0.95));">Become a Partner</a>
@@ -537,7 +580,7 @@
     <!-- Partner Application Form Modal -->
     <div id="partnerModal" class="modal">
         <div class="modal-content">
-            <span class="close-modal" id="closeModal">&times;</span>
+            <span class="close-modal" id="closePartnerModal">&times;</span>
             <h2>Become a Thermodul Partner</h2>
             <form id="partnerForm">
                 <div class="form-group">
@@ -568,6 +611,68 @@
 
                 <div style="text-align: center; margin-top: 1.5rem;">
                     <button type="submit" class="cta-button" style="padding: 0.8rem 2rem;">Submit Partnership Request</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Apply Form Modal -->
+    <div id="applyModal" class="modal">
+        <div class="modal-content apply-form">
+            <span class="close-modal" id="closeApplyModal">&times;</span>
+            <h2>Apply to Work with Thermodul</h2>
+            <form id="applyForm">
+                <div class="form-section">
+                    <h3>Personal Information</h3>
+                    <div class="form-group">
+                        <label>Name:</label>
+                        <input type="text" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Family Name:</label>
+                        <input type="text" name="lastName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Age:</label>
+                        <input type="number" name="age" min="18" max="100" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Home:</label>
+                        <input type="text" name="home" placeholder="City or address" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Radius willing to travel (km):</label>
+                        <input type="number" name="travelRadius" min="0" required>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3>Professional Experience</h3>
+                    <div class="form-group">
+                        <label>How many years of experience do you have in water and gas installation?</label>
+                        <div class="radio-group">
+                            <label class="radio-item"><input type="radio" name="waterGasExp" value="2" required> 2</label>
+                            <label class="radio-item"><input type="radio" name="waterGasExp" value="3"> 3</label>
+                            <label class="radio-item"><input type="radio" name="waterGasExp" value="4"> 4</label>
+                            <label class="radio-item"><input type="radio" name="waterGasExp" value="5"> 5</label>
+                            <label class="radio-item"><input type="radio" name="waterGasExp" value="5+"> more than 5</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>How many years of experience do you have in electric device installation?</label>
+                        <div class="radio-group">
+                            <label class="radio-item"><input type="radio" name="electricExp" value="2" required> 2</label>
+                            <label class="radio-item"><input type="radio" name="electricExp" value="3"> 3</label>
+                            <label class="radio-item"><input type="radio" name="electricExp" value="4"> 4</label>
+                            <label class="radio-item"><input type="radio" name="electricExp" value="5"> 5</label>
+                            <label class="radio-item"><input type="radio" name="electricExp" value="5+"> more than 5</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 1.5rem;">
+                    <button type="submit" class="cta-button" style="padding: 0.8rem 2rem;">Submit Application</button>
                 </div>
             </form>
         </div>
@@ -722,33 +827,62 @@
     <!-- Form Modal JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const modal = document.getElementById('partnerModal');
-            const openButtons = document.querySelectorAll('#openPartnerForm, #openPartnerFormFooter');
-            const closeModal = document.getElementById('closeModal');
-            const form = document.getElementById('partnerForm');
+            // Partner Modal
+            const partnerModal = document.getElementById('partnerModal');
+            const openPartnerButtons = document.querySelectorAll('#openPartnerForm, #openPartnerFormFooter');
+            const closePartnerModal = document.getElementById('closePartnerModal');
+            const partnerForm = document.getElementById('partnerForm');
 
-            openButtons.forEach(button => {
+            openPartnerButtons.forEach(button => {
                 button.addEventListener('click', function (e) {
                     e.preventDefault();
-                    modal.style.display = 'block';
+                    partnerModal.style.display = 'block';
                 });
             });
 
-            closeModal.addEventListener('click', function () {
-                modal.style.display = 'none';
+            closePartnerModal.addEventListener('click', function () {
+                partnerModal.style.display = 'none';
             });
 
+            // Apply Modal
+            const applyModal = document.getElementById('applyModal');
+            const openApplyButton = document.getElementById('openApplyForm');
+            const closeApplyModal = document.getElementById('closeApplyModal');
+            const applyForm = document.getElementById('applyForm');
+
+            openApplyButton.addEventListener('click', function (e) {
+                e.preventDefault();
+                applyModal.style.display = 'block';
+            });
+
+            closeApplyModal.addEventListener('click', function () {
+                applyModal.style.display = 'none';
+            });
+
+            // Close modals when clicking outside
             window.addEventListener('click', function (e) {
-                if (e.target === modal) {
-                    modal.style.display = 'none';
+                if (e.target === partnerModal) {
+                    partnerModal.style.display = 'none';
+                }
+                if (e.target === applyModal) {
+                    applyModal.style.display = 'none';
                 }
             });
 
-            form.addEventListener('submit', function (e) {
+            // Partner form submission
+            partnerForm.addEventListener('submit', function (e) {
                 e.preventDefault();
                 alert('Thank you! Your partnership request has been submitted.');
-                modal.style.display = 'none';
-                form.reset();
+                partnerModal.style.display = 'none';
+                partnerForm.reset();
+            });
+
+            // Apply form submission
+            applyForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                alert('Thank you! Your application has been submitted.');
+                applyModal.style.display = 'none';
+                applyForm.reset();
             });
         });
     </script>
